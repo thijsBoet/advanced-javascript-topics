@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var name="global",func1=function(){return console.log("Logged from func1 ---"),console.log(this),console.log(this.name),func2(),function(){console.log("Logged from func3 ---"),console.log(this),console.log(this.name)}},func2=function(){console.log("Logged from func2 ---"),console.log(this),console.log(this.name)};func1()();var strictName="global",strictFunc1=function(){console.log(this),console.log(this.strictName)};
