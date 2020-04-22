@@ -2,24 +2,6 @@
 
 // All reference types are objects including functions
 // An Object is a collection of values 
-object = {
-  name: "value",
-  userName: "John",
-  address: "100 Main Street",
-  city: "New York",
-  state: "NY",
-  test: function(val) {
-    console.log(val)
-  },
-  // An function on an object is called a method
-  fullAddress: function () {
-            // A value on a object is called an property
-    return `${object.userName} 
-            ${object.address} 
-            ${object.city} 
-            ${object.state}`
-  }
-}
 
 // Since functions are objects we can attach properties to functions
 function myFunc(theObject) {
@@ -52,8 +34,15 @@ var b = a;
 // Next to the given params THIS & ARGUMENTS is always passed into a function
 const test = function(val) {
   console.log(val)
-  // console.log(arguments)  => array of other arguments passed through function ...args
+  // console.log(arguments)  => array like object of other arguments passed through the function
+  //                            like ...args
   // console.log(this)       => the context in which it is invoked
+}
+
+object = {
+  test: function(val) {
+    console.log(val)
+  }
 }
 
 // Four ways to invoke a function
@@ -65,4 +54,9 @@ test(50)
 object.test(50)
 
 // 3) as a constructor (new)
+new Function(50) {
+  console.log(50)
+}
+
 // 4) indirectly using call() and apply()
+test(50).call()
